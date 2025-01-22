@@ -23,6 +23,8 @@ const Calculator = () => {
     });
   };
 
+  console.log(state.scaledServing)
+
   return (
     <div className="w-full max-w-[1000px] flex flex-col p-5 ">
       <h1 className="font-sans capitalize text-2xl font-bold mb-5">

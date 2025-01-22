@@ -3,10 +3,10 @@ import {  stateContext  } from "./recipeReducer";
 import {  useContext } from "react";
 
 
-const ResizedRecipe = () => {
+const ResizedRecipe = () => { 
 
   const {state} = useContext(stateContext)
-  const newServing = state.multiplyBy / state.originalServing;
+
 
   return (
     <div className="p-5 border border-gray-300 rounded-md mt-5">
@@ -16,9 +16,9 @@ const ResizedRecipe = () => {
 
       <div>
         <ul className="list-disc list-inside flex flex-col gap-2 mt-4">
-          {state.ingredientsList.map((ingredient , index ) => (
+          {state.scaledServing.map((ingredient , index ) => (
             <li key={index}>
-              {ingredient.ingredientName} {ingredient.quantity * newServing } {ingredient.unit}
+              {ingredient.IngN} {ingredient.amount} {ingredient.unit}
             </li>
           ))}
         </ul>

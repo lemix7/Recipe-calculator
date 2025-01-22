@@ -14,6 +14,13 @@ export const INITIAL_STATE = {
     },
   ],
   showServing: false,
+  scaledServing: [
+    {
+      IngN: "",
+      amount: 0,
+      unit: "",
+    },
+  ],
 };
 
 export const stateContext = createContext();
@@ -43,6 +50,7 @@ export function recipeReducer(state, action) {
     case "UPDATE_INGREDIENT":
       return {
         ...state,
+        formula: state.multiplyBy / state.originalServing,
         ingredientsList: state.ingredientsList.map((ingredient, index) =>
           index === action.payload.index
             ? {
@@ -57,6 +65,12 @@ export function recipeReducer(state, action) {
       return {
         ...state,
         showServing: true,
+        scaledServing: state.ingredientsList.map((ingredient) => ({
+          ...ingredient,
+          IngN: ingredient.ingredientName,
+          amount: ingredient.quantity * state.formula,
+          unit: ingredient.unit,
+        })),
       };
 
     default:
