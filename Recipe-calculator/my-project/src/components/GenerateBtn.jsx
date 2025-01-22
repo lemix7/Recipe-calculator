@@ -6,7 +6,7 @@ const GenerateBtn = ({onclick}) => {
 
   return (
     <div className="p-5">
-      <button className="w-full md:w-[300px] p-2 text-white bg-black rounded-lg font-semibold " onClick={onclick}>
+      <button className="w-full md:w-[300px] p-2 text-white bg-gray-950  rounded-lg font-semibold " onClick={onclick}>
         Resize recipe
       </button>
     </div>

@@ -23,8 +23,6 @@ const Calculator = () => {
     });
   };
 
-  console.log(state.scaledServing)
-
   return (
     <div className="w-full max-w-[1000px] flex flex-col p-5 ">
       <h1 className="font-sans capitalize text-2xl font-bold mb-5">
@@ -39,7 +37,7 @@ const Calculator = () => {
         placeholder={"Enter recipe name"}
       />
 
-      <div className="flex flex-col mt-5 space-y-2 md:flex-row md:space-x-5 md:space-y-0 ">
+      <div className="flex flex-col mt-5 md:flex-row md:gap-x-5  ">
         <InputField
           title={"Original serving"}
           name={"originalServing"}
